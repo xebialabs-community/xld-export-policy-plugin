@@ -5,3 +5,7 @@ before_install:
 - mkdir -p ~/.gradle
 - echo jythonInterpreter=jython >> ~/.gradle/gradle.properties
 script: gradle check -PjythonInterpreter=jython
+notifications:
+  hipchat:
+    rooms:
+      secure: 09F60n0/qIkY4kwyDG+G94C3N9ajqJQ5ebFGmZI8S9+cuXm8VjVrhGoKJj1yDU/5Q52haYRn03vREgrlaYEOX+IgV6o++xypkFGXyfaRPjFfGKRlEsVWU0d4x4LWfzbufDfDQTlqpTTo/8s1iCB2JH/wbWoCY0aBBr7F1AWv1UiJh2qAAYKg+k85p0eFk4G+g/SoXRwcyjSz3bpznWKOMF9OPq46IiGIwIw++u8bP4lbskqeAmAjGVxTKP71ErNpt6y+2n6MyPpPTkrlXoYQslaK3uD6uF7wZbx5vGYPO3TS1R6asjY4308s1lmGS9jAbAYLaq1Wwm2ZZtSZFsgq8coM4gCeRJg8MdjVsZSx5Wc9+Gfw87zC0S+BvLfelN0BRugGRKtK2zjYy/HfqZdk21l/oxEbEjMByhRACitnH58APz8KnBnhY8jVJLxsGewKZvtz0Rs19+QWocG9Gs0qKkLu5xIXexmCWeIWNqMRgvuLHh0sqs2Adn3SpnINdvuUXVH8/AA8W7jZgWH8IOr3bvLpxAzrS9itHkNYLQhDWAmg334OOAqHDgc7tQi0GcsvSGR9yaIXuHrXZEMxfCwBG+ZkQ7HOZkyxLOMk8/lQYwgKhR8WbCrwtG0k7DUAiUFkaGjwnG98X7lAjBi1Y4erC1oVBJNcpbjYt2DPv/lvIGc=
