@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS
+    FOR A PARTICULAR PURPOSE. THIS CODE AND INFORMATION ARE NOT SUPPORTED BY XEBIALABS.
+
+-->
+<synthetic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns="http://www.xebialabs.com/deployit/synthetic"
+           xsi:schemaLocation="http://www.xebialabs.com/deployit/synthetic synthetic.xsd">
+
+    <type type="policy.ExportTaskPolicy" extends="policy.JythonStepJob" description="Schedule export task policy">
+        <!-- schedule -->
+        <property name="schedule" label="Crontab schedule" default="0 0 18 * * *" category="Schedule" description="Specify the daily crontab schedule to execute this policy. The pattern is a list of six single space-separated fields: representing second, minute, hour, day, month, weekday. Month and weekday names can be given as the first three letters of the English names. Example patterns: '0 0 * * * *' = the top of every hour of every day, '0 0 14 * * SAT,SUN' = 14 o'clock on each weekend day, '0 0 9-17 * * MON-FRI' = on the hour nine-to-five weekdays, '0 0 0 1 * *' = every 1st of month at midnight.">
+            <rule type="cronPattern"/>
+        </property>
+
+        <!-- common -->
+        <property name="targetFile" label="Target File" description="Target file where the csv export should be written into."/>
+        <property name="days" label="Number of Days" kind="integer" description="Number of days to export" />
+        <property name="timePattern" label="Time pattern" kind="string" description="Time pattern to be used" required="false" />
+        <!-- admin properties -->
+        <property name="policyType" hidden="true" default="LAST_N_ALL_ENV"/>
+        <property name="description" hidden="true" default="Execute task export to csv according to policy"/>
+        <property name="scriptPath" hidden="true" default="exporter/export-tasks.py"/>
+    </type>
+
+</synthetic>
+

@@ -1,0 +1,50 @@
+plugins {
+  id "com.github.hierynomus.license" version "0.11.0"
+  id "com.xebialabs.xldp" version "1.0.5"
+}
+
+version='5.0.1'
+
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+def apiVersion      = '2015.5.0'
+
+repositories {
+  mavenLocal()
+  mavenCentral()
+  maven {
+    credentials {
+        username 'community-plugins'
+        password 'community'
+    }
+    url 'http://nexus.xebialabs.com/nexus/content/repositories/releases'
+  }
+}
+
+dependencies {
+  compile "org.python:jython:2.7.0"
+  testCompile "joda-time:joda-time:2.3"
+  testCompile "org.mockito:mockito-core:1.10.19"
+  testCompile "com.xebialabs.deployit:engine-api:$apiVersion"
+}
+
+sourceSets.main.resources.srcDirs = ["src/main/jython", "src/main/resources"]
+sourceSets.test.resources.srcDirs = ["src/test/jython", "src/test/resources"]
+
+task testJython(type: Exec, dependsOn: ['testClasses']) {
+  environment = ["CLASSPATH": sourceSets.test.runtimeClasspath.asPath, "PATH": System.getenv("PATH"), "HOME": System.getenv("HOME")]
+  commandLine jythonInterpreter, "$projectDir/src/test/jython/xlnoserunner/runtests.py", "$projectDir/src/test/jython/exportPolicy", buildDir
+  workingDir = projectDir
+}
+
+test.dependsOn testJython
+
+license {
+    header rootProject.file('src/main/license/xebialabs_community.license')
+    strictCheck true
+}
