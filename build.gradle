@@ -24,6 +24,9 @@ repositories {
     }
     url 'http://nexus.xebialabs.com/nexus/content/repositories/releases'
   }
+  maven {
+      url 'http://www.knopflerfish.org/maven2'
+  }
 }
 
 dependencies {
