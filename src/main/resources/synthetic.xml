@@ -20,11 +20,11 @@
         <property name="targetFile" label="Target File" description="Target file where the csv export should be written into."/>
         <property name="days" label="Number of Days" kind="integer" description="Number of days to export" />
         <property name="timePattern" label="Time pattern" kind="string" description="Time pattern to be used" required="false" />
+        <property name="taskType" label="Task Type to export" kind="string" description="Task Type to export (DEPLOY or CONTROL)" default="DEPLOY" required="true" />
         <!-- admin properties -->
         <property name="policyType" hidden="true" default="LAST_N_ALL_ENV"/>
         <property name="description" hidden="true" default="Execute task export to csv according to policy"/>
         <property name="scriptPath" hidden="true" default="exporter/export-tasks.py"/>
     </type>
-
 </synthetic>
 

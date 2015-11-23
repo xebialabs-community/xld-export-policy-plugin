@@ -3,7 +3,7 @@ plugins {
   id "com.xebialabs.xldp" version "1.0.5"
 }
 
-version='5.0.1'
+version='5.1.0'
 
 
 apply plugin: 'java'

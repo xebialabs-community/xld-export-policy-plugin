@@ -6,7 +6,7 @@ See the **XL Deploy Reference Manual** for background information on XL Deploy a
 
 # Overview #
 
-The XLD export policy plugin is a XL Deploy plugin that adds capability for exporting archived tasks on a policy basis into a `CSV` file.
+The XLD export policy plugin is a XL Deploy plugin that adds capability for exporting archived tasks on a policy basis into a `CSV` file. Both Deployment tasks and Control can be exported.
 
 # Requirements #
 
