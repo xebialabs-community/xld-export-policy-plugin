@@ -4,7 +4,7 @@ before_install:
 - sudo apt-get install jython
 - mkdir -p ~/.gradle
 - echo jythonInterpreter=jython >> ~/.gradle/gradle.properties
-script: gradle check -PjythonInterpreter=jython
+script: ./gradlew check -PjythonInterpreter=jython
 notifications:
   hipchat:
     rooms:
