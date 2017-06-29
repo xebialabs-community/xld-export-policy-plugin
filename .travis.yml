@@ -1,7 +1,7 @@
 language: java
 dist: trusty
 before_install:
-- curl -O http://search.maven.org/remotecontent?filepath=org/python/jython-installer/2.7.0/jython-installer-2.7.0.jar
+- curl -O http://central.maven.org/maven2/org/python/jython-installer/2.7.0/jython-installer-2.7.0.jar
 - java -jar jython-installer-2.7.0.jar -s -d /tmp
 - mkdir -p ~/.gradle
 - echo jythonInterpreter=/tmp/bin/jython >> ~/.gradle/gradle.properties
