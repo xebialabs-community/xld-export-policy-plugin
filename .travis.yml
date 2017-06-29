@@ -1,10 +1,10 @@
 language: java
-sudo: required
 dist: trusty
 before_install:
-- sudo apt-get install jython
+- curl -O http://search.maven.org/remotecontent?filepath=org/python/jython-installer/2.7.0/jython-installer-2.7.0.jar
+- java -jar jython-installer.jar -s -d /tmp
 - mkdir -p ~/.gradle
-- echo jythonInterpreter=jython >> ~/.gradle/gradle.properties
+- echo jythonInterpreter=/tmp/bin/jython >> ~/.gradle/gradle.properties
 script: ./gradlew check -PjythonInterpreter=jython
 notifications:
   hipchat:
