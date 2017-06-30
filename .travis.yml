@@ -3,7 +3,7 @@ dist: trusty
 before_install:
 - curl -O http://central.maven.org/maven2/org/python/jython-installer/2.7.0/jython-installer-2.7.0.jar
 - java -jar jython-installer-2.7.0.jar -s -d /tmp/jython
-- /tmp/jython/binn/jython --version
+- /tmp/jython/bin/jython --version
 - mkdir -p ~/.gradle
 - echo jythonInterpreter=/tmp/jython/bin/jython >> ~/.gradle/gradle.properties
 script: ./gradlew check -PjythonInterpreter=jython
