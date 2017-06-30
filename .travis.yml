@@ -6,7 +6,7 @@ before_install:
 - /tmp/jython/bin/jython --version
 - mkdir -p ~/.gradle
 - echo jythonInterpreter=/tmp/jython/bin/jython >> ~/.gradle/gradle.properties
-script: ./gradlew check -PjythonInterpreter=jython
+script: ./gradlew check
 notifications:
   hipchat:
     rooms:
