@@ -3,14 +3,13 @@ dist: trusty
 before_install:
 - curl -O http://central.maven.org/maven2/org/python/jython-installer/2.7.1b3/jython-installer-2.7.1b3.jar
 - java -jar jython-installer-2.7.1b3.jar -s -d /tmp/jython
-- /tmp/jython/bin/jython --version
+- "/tmp/jython/bin/jython --version"
 - mkdir -p ~/.gradle
 - echo jythonInterpreter=/tmp/jython/bin/jython >> ~/.gradle/gradle.properties
-script: ./gradlew check
+script: "./gradlew check"
 notifications:
-  hipchat:
-    rooms:
-      secure: 09F60n0/qIkY4kwyDG+G94C3N9ajqJQ5ebFGmZI8S9+cuXm8VjVrhGoKJj1yDU/5Q52haYRn03vREgrlaYEOX+IgV6o++xypkFGXyfaRPjFfGKRlEsVWU0d4x4LWfzbufDfDQTlqpTTo/8s1iCB2JH/wbWoCY0aBBr7F1AWv1UiJh2qAAYKg+k85p0eFk4G+g/SoXRwcyjSz3bpznWKOMF9OPq46IiGIwIw++u8bP4lbskqeAmAjGVxTKP71ErNpt6y+2n6MyPpPTkrlXoYQslaK3uD6uF7wZbx5vGYPO3TS1R6asjY4308s1lmGS9jAbAYLaq1Wwm2ZZtSZFsgq8coM4gCeRJg8MdjVsZSx5Wc9+Gfw87zC0S+BvLfelN0BRugGRKtK2zjYy/HfqZdk21l/oxEbEjMByhRACitnH58APz8KnBnhY8jVJLxsGewKZvtz0Rs19+QWocG9Gs0qKkLu5xIXexmCWeIWNqMRgvuLHh0sqs2Adn3SpnINdvuUXVH8/AA8W7jZgWH8IOr3bvLpxAzrS9itHkNYLQhDWAmg334OOAqHDgc7tQi0GcsvSGR9yaIXuHrXZEMxfCwBG+ZkQ7HOZkyxLOMk8/lQYwgKhR8WbCrwtG0k7DUAiUFkaGjwnG98X7lAjBi1Y4erC1oVBJNcpbjYt2DPv/lvIGc=
+  slack:
+    secure: Vl67/o/Z/q71mpulDpfGgHEBSD1sXYGeg4FC/0580EUny+Pzoc9Q3hfwfXSI15jretZMpf19/8BUGZLgHq7mE5gnZ1kdTM7HYVQrvF2xQ94F3ivT42wrH4kawx6ky5W/tOeFgMpDu/dCPhHrx5mIMo3qt/uizCNtPch1YaH502RIt1s6Op+4w0ZwsUFewS/AStEl1+IBLd21UJA8wF4KSsgZ4I9w0kH/IS+UjWhA2Nky70HvhahGykmO/a/4yrvBdf811flUgvNuEOmJ/SxrXxF5RKEpirlQIhkBHL9OoUoKnjn5jHUaievaynh1FbsawhTGWazeHzphfJ64DnRWy5hhpGgg/PwLGtCB33etzhkwxmRXKCzLvKJGma/djQdct54AnOE1bw9obdQ+z8NSMq2QYLyFaNatjkgMLVLFRs/AqEcI84n3Ez0f3NAvsrDP1VerOUqa8rcxWyLCVoaI2lDOUfCya+CHhW6lTuFnhYpdzi3BckERhV2+qB4FFRSoGPs5uCmAb6tH303Zo+MY1vcGmTpn64fuXTWRr/CHw56yyI3pQaRLfqQExq77E1hclmg+t5x+C0mwXX8i20MMEskQrWPF8HppOXHzG4vydLgcTdVTxZZ8qSSfgZAed0tK359pHV0JaYVXql55f7ktpMJQoSilYtPT6Rs3GmTsvhg=
 deploy:
   provider: releases
   api_key:
